@@ -19,6 +19,7 @@ func main() {
 	// assign url
 	parseArgs.AssignUrl(&c, args[1])
 	extraArgs := args[2:]
+	// TODO: create a data and header extractor
 	var headers []string
 	var data []string
 	for _, v := range extraArgs {
@@ -34,5 +35,5 @@ func main() {
 	request.AddHeader(req, headers)
 	resp := response.Call(&c, req)
 
-	fmt.Print(resp)
+	fmt.Println(resp)
 }

@@ -19,12 +19,7 @@ func PreRequest(c *request.ParsedArgs) *http.Request {
 
 // Calls a newRequest and takes in a ParsedArgs
 func Call(c *request.ParsedArgs, req *http.Request) string {
-	fmt.Println(c.Verb)
 	client := &http.Client{}
-	// req, err := http.NewRequest(c.Verb, c.Url, nil)
-	// c.Header = req
-	// req.Header.Set("yes", "no")
-
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Println(err)
