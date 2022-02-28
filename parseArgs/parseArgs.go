@@ -16,8 +16,8 @@ func ArgParser() []string {
 	}
 	switch len(args) {
 	case 1:
-		req = append(req, "GET")
-		req = append(req, args[0], "", "")
+		req = append(req, args...)
+
 	case 2:
 		req = append(req, strings.ToUpper(args[0]), args[1], "", "")
 	case 3:
